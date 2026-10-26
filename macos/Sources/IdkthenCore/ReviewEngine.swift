@@ -41,6 +41,7 @@ public struct ReviewEngine {
         let chunks = Self.chunkPattern.matches(in: text, range: full)
         let tokenizer = pair.usesCyrillicLayout ? Self.cyrillicTokenizer : Self.latinTokenizer
         var changes: [Change] = []
+        var contextResolved: Set<Int> = []
         var protectedRanges: [NSRange] = []
         for chunk in chunks {
             let value = ns.substring(with: chunk.range)
@@ -82,17 +83,24 @@ public struct ReviewEngine {
                     let transcription = pair == .german ? GermanTranscription.candidates(for: word, spelling: spelling) : []
                     let candidates = (AccentCandidates.make(for: word, pair: pair, spelling: spelling) + transcription)
                         .map { matchCase($0, to: word) }
-                    let unique = candidates.reduce(into: [String]()) { if !$0.contains($1) { $0.append($1) } }
+                    var unique = candidates.reduce(into: [String]()) { if !$0.contains($1) { $0.append($1) } }
                     guard !unique.isEmpty else { continue }
+                    let before = precedingContext + ns.substring(to: match.range.location)
+                    if direction == .detect,
+                       let preferred = AccentContext.preferred(for: word, pair: pair, before: before, candidates: unique) {
+                        unique = [preferred]
+                        contextResolved.insert(match.range.location)
+                    }
                     let capitalized = word.first?.isUppercase == true
                     // Sara is also a personal name, even in lowercase chat. Some
                     // macOS dictionaries accept only the accented verb. Do not let
                     // dictionary coverage or a context model choose a person's name.
                     let nameReading = pair == .italian && Self.folded(word) == "sara"
                     let explicit = !transcription.isEmpty || nameReading
-                    let ambiguous = explicit || capitalized || spelling.isWord(word, language: "en") || spelling.isWord(word, language: pair.spellLanguage) || unique.count > 1
+                    let resolved = contextResolved.contains(match.range.location)
+                    let ambiguous = explicit || capitalized || (!resolved && (spelling.isWord(word, language: "en") || spelling.isWord(word, language: pair.spellLanguage) || unique.count > 1))
                     changes.append(Change(range: match.range, original: word, candidates: unique,
-                                          reason: nameReading ? "Sara can be a name. Choose whether you mean the verb sarà." : (!transcription.isEmpty ? "ASCII umlaut spelling can be intentional. Choose this change explicitly." : (capitalized ? "This could be a name. Choose whether to add the accent." : (ambiguous ? "Both readings may work. Choose the meaning you intend." : "Only a missing accent changes."))), ambiguous: ambiguous, requiresExplicitChoice: explicit))
+                                          reason: resolved ? "A nearby phrase identifies this accent reading." : (nameReading ? "Sara can be a name. Choose whether you mean the verb sarà." : (!transcription.isEmpty ? "ASCII umlaut spelling can be intentional. Choose this change explicitly." : (capitalized ? "This could be a name. Choose whether to add the accent." : (ambiguous ? "Both readings may work. Choose the meaning you intend." : "Only a missing accent changes.")))), ambiguous: ambiguous, requiresExplicitChoice: explicit))
                 } else {
                     let supportedScript = letters.allSatisfy { scalar in
                         let value = scalar.value
@@ -141,7 +149,7 @@ public struct ReviewEngine {
             let englishScript = change.original.unicodeScalars.allSatisfy {
                 CharacterSet.letters.contains($0) ? $0.isASCII : "'’ʼ-".unicodeScalars.contains($0)
             }
-            let accepted = direction == .detect && (
+            let accepted = direction == .detect && !contextResolved.contains(change.range.location) && (
                 (englishScript && spelling.isAvailable("en") && spelling.isWord(change.original, language: "en"))
                 || (pair.canValidateScript(in: change.original) && languageAvailable
                     && automaticLayoutValidation && spelling.isWord(change.original, language: pair.spellLanguage)))

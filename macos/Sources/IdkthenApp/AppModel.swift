@@ -25,6 +25,7 @@ import IdkthenCore
     @Published var canRedo = false
     var canUndoReview: Bool { localUndo != nil || (bridge.undoTransaction != nil && !bridge.hasLiveUndo) }
     @Published private(set) var liveEnabled = false
+    @Published private(set) var hasConflictingCopy = false
     @Published private(set) var liveRequested: Bool
     @Published private(set) var liveStatus = "Off · no background text access"
     @Published private(set) var liveApps: [String: String]
@@ -42,6 +43,7 @@ import IdkthenCore
     }
     var homeStatus: String {
         guard liveRequested else { return "Paused. Your text stays as typed." }
+        guard !hasConflictingCopy else { return AppInstance.conflictMessage }
         guard permissionGranted else { return "Allow Accessibility to use idkthen in your apps." }
         guard !liveApps.isEmpty else { return "Choose an app to use While You Type." }
         guard liveEnabled else { return "Could not connect. Turn While You Type off and on to retry." }
@@ -428,7 +430,8 @@ import IdkthenCore
     /// Called on activation/unlock/wake, without timers or background text reads.
     func refreshTypingAvailability() {
         permissionGranted = bridge.trusted
-        typingSession.reconcile(hasAccess: permissionGranted, hasApps: !liveApps.isEmpty)
+        hasConflictingCopy = AppInstance.hasOtherCopy
+        typingSession.reconcile(hasAccess: permissionGranted, hasApps: !liveApps.isEmpty, blockedByAnotherCopy: hasConflictingCopy)
         liveRequested = typingSession.requested; liveEnabled = typingSession.running
         if let failure = typingSession.failure { message = failure; isError = true }
         liveDidChange?()

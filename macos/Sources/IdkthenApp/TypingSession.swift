@@ -20,10 +20,15 @@ import Foundation
         defaults.set(enabled, forKey: "liveEnabled")
     }
 
-    func reconcile(hasAccess: Bool, hasApps: Bool) {
+    func reconcile(hasAccess: Bool, hasApps: Bool, blockedByAnotherCopy: Bool = false) {
         guard requested, hasAccess, hasApps else {
             if running { stop() }
             running = false; failure = nil
+            return
+        }
+        guard !blockedByAnotherCopy else {
+            if running { stop() }
+            running = false; failure = AppInstance.conflictMessage
             return
         }
         guard !running else { return }

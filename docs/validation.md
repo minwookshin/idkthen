@@ -1,24 +1,27 @@
-# Validation status — 0.18.0 (28)
+# Validation status — 0.18.1 (29)
 
-This is a source preview, not a general-release approval. A local build and synthetic tests do not prove reliable typing in every app.
+A source preview. The public Mac installer remains closed until the distribution and real-device checks below pass.
 
-## Confirmed locally
+## Confirmed on this build
 
-- 130 Swift core tests passed, including new regressions for bulk input followed by typing, pasted unfinished words, field activation and emoji/UTF-16 ranges.
-- 83 web tests passed, covering selected languages, conservative correction, Unicode, recovery, native edit validation and the closed download gate.
-- Chrome and Safari web preview: `chromedptj ` becomes `chrome에서 `; standard Undo restores the original and Redo reapplies the correction. Safari requires correction after the original input transaction finishes. The queued edit rechecks the exact text, selection, focus and composition state.
+- All 18 automated check groups passed: 137 Swift core tests, 85 web tests, release tooling, app lifecycle and synthetic app checks.
+- The frozen authored corpus passed **130/130**, up from 127/130. Three French/Portuguese misses now use bounded nearby-phrase rules. Valid spellings, names, literal text and conflicts with another enabled language remain protected. This is not a user accuracy estimate.
+- Controlled native Chrome 155 textarea: `dkssud → 안녕`, `gkdl → 하이` and `chromedptj → chrome에서` applied once. Menu-button Undo restored the original word while preserving text typed afterward.
+- Controlled native Chrome contenteditable: a new word corrected while surrounding bold/italic nodes and emoji survived. An existing unobserved word was left alone. Pasted text stayed unchanged on the next keystroke; single-line, password and read-only fields were excluded.
+- A legacy PairType process was found running alongside idkthen and reproduced duplicate corrections. The new build pauses its live session when another copy is detected and checks for conflicts again before writing. The conflict message and recovery after quitting the old copy were checked; lifecycle tests cover startup, later conflicts and preserving an explicit Pause.
+- Web preview: the three new French/Portuguese examples corrected through the actual input box. Safari 27.0.1 correction and native browser Undo/Redo passed with the Mac app paused. Desktop and 390px/320px responsive layouts were inspected. Responsive checks are not physical iPhone testing.
 
-The new Mac guard excludes words from changes that cannot be classified as small typing edits. It also fixes the previous behavior where a skipped large input could be corrected on the next small keystroke. This deliberately does not convert an atomic large burst: Accessibility alone cannot reliably tell it apart from paste. The inspection window is anchored to the first notification rather than continually delayed.
+Local environment: macOS 27.0.1, Apple silicon. The executable is Apple Development signed, **not Developer ID signed or notarized**. SHA-256: `ce430938c977d128cc40f4217e1a41916dae5185827e41b167d07d116aa89635`.
 
-## Remaining release gates
+The browser fixture contains no correction engine. Tests used synthetic text and tool-driven input. Two sampled native correction events arrived approximately 115 ms and 75 ms after the boundary input; this is a narrow observation, not a latency, battery-life or everyday reliability claim.
+
+## Before a public Mac installer
 
 - Developer ID signing, notarization, stapling and Gatekeeper acceptance.
-- Integration checks on the final signed binary, including real physical typing and IME switching, supported Safari/Chrome editors, the global Undo shortcut, login/wake and permission recovery.
-- VoiceOver, fresh installation/update/removal on a second Mac/account, and the oldest macOS version advertised for download.
-- Independent everyday-use feedback and false-correction rates. No user accuracy, battery-life or broad latency claim is made.
+- Physical sustained typing, real IME changes and the global Undo shortcut on the exact signed binary. The menu Undo passed; injected global shortcut input was inconclusive.
+- Supported Safari/Chrome editors, login/wake, permission recovery, VoiceOver, fresh installation/update/removal on a second Mac/account, and the oldest advertised macOS version.
+- Independent everyday-use feedback, particularly unwanted corrections and skipped typing.
 
-The frozen corpus passed 127 of 130 authored scenarios on this build. Three French/Portuguese accent-recovery misses remain. This is separate from the 130 passing core tests and is not a representative user dataset.
+The Mac fast path still intentionally skips large, unobserved insertions. Accessibility cannot reliably distinguish an atomic paste from a whole-word notification burst. It also prevents a skipped word from being changed by a later keystroke. It does not read global keystrokes or the clipboard.
 
-The local candidate runner passed all 18 check groups on macOS 27.0.1 / arm64, including signature integrity (development signing only), core tests, release-tool tests and synthetic app checks. The tested executable SHA-256 is `7555db6cff750f5e9105fe8864ec388ae0779de924a33f1c750a3c31474cdf7f`. Native menu-bar startup retained the existing four-language selection and three enabled apps. A new controlled Chrome native-integration attempt did not produce a correction through injected input; it is not counted as an OS-integration pass. Real foreground typing remains an open gate.
-
-The release script refuses to package a public installer unless evidence for all required checks matches the exact signed executable hash. Evidence is local and excluded from Git; do not publish private test text or screenshots.
+Local evidence is tied to the executable hash and excluded from Git. Release packaging refuses a public installer unless all required evidence matches the final signed binary. Do not publish private test text or screenshots.

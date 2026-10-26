@@ -2,6 +2,7 @@
 // Separate from the native Mac dictionary and on-device model.
 import {koreanCandidates,protectsLiteral} from './korean-policy.js';
 import {isChatLiteral} from './conversation-policy.js';
+import {contextualAccent} from './accent-context.js';
 export const languages = [
   {id:'es',name:'Spanish',native:'Español',sample:'manana',result:'mañana'},
   {id:'fr',name:'French',native:'Français',sample:'francais',result:'français'},
@@ -14,8 +15,8 @@ export const languages = [
 ];
 const vocabulary = {
   es:{manana:'mañana',corazon:'corazón',senor:'señor',espanol:'español',reunion:'reunión',telefono:'teléfono',tambien:'también',adios:'adiós',despues:'después',facil:'fácil',dificil:'difícil',rapido:'rápido',ultima:'última',ultimo:'último',musica:'música',proximo:'próximo',ojala:'ojalá'},
-  fr:{francais:'français',bientot:'bientôt',fevrier:'février',reunion:'réunion',resume:'résumé',deja:'déjà',cafe:'café',desole:'désolé',desolee:'désolée',etre:'être',tres:'très',apres:'après'},
-  pt:{amanha:'amanhã',coracao:'coração',portugues:'português',voce:'você',nao:'não',obrigacao:'obrigação',voces:'vocês',tambem:'também',otimo:'ótimo',otima:'ótima',musica:'música',rapido:'rápido',ultima:'última',ultimo:'último'},
+  fr:{francais:'français',bientot:'bientôt',fevrier:'février',reunion:'réunion',resume:'résumé',deja:'déjà',arrive:'arrivé',arrives:'arrivés',arrivee:'arrivée',arrivees:'arrivées',pres:['près','prés'],ecole:'école',"l'ecole":"l'école","l’ecole":"l’école",cafe:'café',desole:'désolé',desolee:'désolée',etre:'être',tres:'très',apres:'après'},
+  pt:{amanha:'amanhã',reuniao:'reunião',coracao:'coração',portugues:'português',voce:'você',nao:'não',obrigacao:'obrigação',voces:'vocês',tambem:'também',otimo:'ótimo',otima:'ótima',musica:'música',rapido:'rápido',ultima:'última',ultimo:'último'},
   de:{strasse:'straße',grusse:'grüße',schoen:'schön',koennen:'können',fuer:'für',moechte:'möchte',moeglich:'möglich',natuerlich:'natürlich',spaeter:'später',frueher:'früher',zurueck:'zurück',ueber:'über'},
   it:{perche:'perché',citta:'città',piu:'più',lunedi:'lunedì',universita:'università',martedi:'martedì',mercoledi:'mercoledì',giovedi:'giovedì',venerdi:'venerdì',cosi:'così',pero:'però',gia:'già'},
   ru:{ghbdtn:'привет','cgfcb,j':'спасибо',rfr:'как',lf:'да',ctqxfc:'сейчас',pfdnhf:'завтра',gjnjv:'потом',kflyj:'ладно',ghjcnj:'просто',rhenj:'круто',gjyznyj:'понятно',rjytxyj:'конечно','hf,jnf.':'работаю'},
@@ -23,7 +24,7 @@ const vocabulary = {
 };
 // These also have intentional readings (including English reunion). Unlike the
 // native engine this preview has no system dictionary; do not imply full coverage.
-const ambiguous = new Set(['reunion','resume','cafe','deja','nao','lf','rfr','tres','gia','pero','cosi','ueber']);
+const ambiguous = new Set(['reunion','resume','cafe','deja','arrive','arrives','arrivee','arrivees','pres','amanha','nao','lf','rfr','tres','gia','pero','cosi','ueber']);
 const known = new Set(languages.map(l=>l.id));
 export function selectLanguages(ids) { return [...new Set(ids)].filter(id=>known.has(id)).slice(0,3); }
 function styled(original, candidate, id) {
@@ -34,12 +35,15 @@ function styled(original, candidate, id) {
 }
 export function candidatesFor(word, selected, precedingContext='') {
   if (!word || word.length>96 || /[@#/:\\\d_=`]/u.test(word)) return [];
-  if (!/^[\p{L},.]+$/u.test(word) || protectsLiteral(word,precedingContext) || isChatLiteral(word,selected)) return [];
+  if (!/^[\p{L},.]+(?:['’]\p{L}+)*$/u.test(word) || protectsLiteral(word,precedingContext) || isChatLiteral(word,selected)) return [];
   const enabled=selectLanguages(selected),results=[];
   for (const id of enabled.filter(id=>id!=='ko')) {
-    const candidate=vocabulary[id]?.[word.toLowerCase()];
+    const entry=vocabulary[id]?.[word.toLowerCase()];
+    const candidates=Array.isArray(entry)?entry:typeof entry==='string'?[entry]:[];
+    const resolved=contextualAccent(word,id,precedingContext,candidates);
+    const conflict=word.toLowerCase()==='deja' && enabled.includes('es');
     const couldBeName=/^\p{Lu}/u.test(word);
-    if (typeof candidate==='string' && candidate!==word.toLowerCase()) results.push({text:styled(word,candidate,id),language:id,automatic:!ambiguous.has(word.toLowerCase()) && id!=='uk' && id!=='de' && !couldBeName});
+    for(const candidate of resolved?[resolved]:candidates) if(candidate!==word.toLowerCase()) results.push({text:styled(word,candidate,id),language:id,automatic:(!ambiguous.has(word.toLowerCase()) || !!resolved) && !conflict && id!=='uk' && id!=='de' && !couldBeName});
   }
   if(enabled.includes('ko')) results.push(...koreanCandidates(word,precedingContext,results.length===0));
   return results.filter((v,i,a)=>a.findIndex(x=>x.text===v.text)===i);

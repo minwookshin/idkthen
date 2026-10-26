@@ -264,6 +264,7 @@ struct SelectionSnapshot {
     }
     func clearUndo() { disableUndoShortcut(); undoSnapshot = nil; undoTransaction = nil; undoCaret = nil; liveRecovery = nil }
     private func validate(_ snapshot: SelectionSnapshot, expected: String) throws {
+        guard !AppInstance.hasOtherCopy else { throw SelectionError.message(AppInstance.conflictMessage) }
         guard trusted, !IsSecureEventInputEnabled() else { throw SelectionError.message("Text access is unavailable. Nothing was replaced.") }
         try checkField(snapshot.element)
         let root = AXUIElementCreateApplication(snapshot.pid)

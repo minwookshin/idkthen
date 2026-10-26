@@ -93,13 +93,14 @@ import IdkthenCore
         popover.animates = false
         updateStatus(); buildMainMenu(); model.restoreLivePreference()
         let center = NSWorkspace.shared.notificationCenter
-        for name in [NSWorkspace.didActivateApplicationNotification, NSWorkspace.sessionDidBecomeActiveNotification, NSWorkspace.didWakeNotification] {
+        for name in [NSWorkspace.didActivateApplicationNotification, NSWorkspace.sessionDidBecomeActiveNotification, NSWorkspace.didWakeNotification,
+                     NSWorkspace.didLaunchApplicationNotification, NSWorkspace.didTerminateApplicationNotification] {
             workspaceTokens.append(center.addObserver(forName: name, object: nil, queue: .main) { [weak self] _ in
                 Task { @MainActor in self?.model.refreshTypingAvailability() }
             })
         }
         // A configured utility stays in the menu bar without stealing typing focus.
-        if model.setupStep != .done { DispatchQueue.main.async { [weak self] in self?.showPanel() } }
+        if model.setupStep != .done || model.hasConflictingCopy { DispatchQueue.main.async { [weak self] in self?.showPanel() } }
     }
     func showWindow() {
         popover.performClose(nil)

@@ -52,6 +52,19 @@ import AppKit
         paused.reconcile(hasAccess: true, hasApps: true)
         check(!paused.requested && !paused.running && starts == 4, "Pause survives relaunch")
 
+        var conflictStarts = 0, conflictStops = 0
+        let duplicate = TypingSession(defaults: defaults, start: { conflictStarts += 1 }, stop: { conflictStops += 1 })
+        duplicate.setRequested(true)
+        duplicate.reconcile(hasAccess: true, hasApps: true, blockedByAnotherCopy: true)
+        check(!duplicate.running && conflictStarts == 0 && duplicate.failure != nil, "a second copy cannot start observing")
+        duplicate.reconcile(hasAccess: true, hasApps: true)
+        check(duplicate.running && conflictStarts == 1 && duplicate.failure == nil, "quitting the other copy resumes the saved On choice")
+        for _ in 0..<10 { duplicate.reconcile(hasAccess: true, hasApps: true, blockedByAnotherCopy: true) }
+        check(!duplicate.running && conflictStops == 1 && duplicate.requested, "a later duplicate stops observation once without changing preferences")
+        duplicate.setRequested(false)
+        duplicate.reconcile(hasAccess: true, hasApps: true)
+        check(!duplicate.running && conflictStarts == 1, "Pause during a duplicate conflict prevents automatic resume")
+
         let cases: [(Bool, Bool, Bool, Bool, Bool, MenuBarState)] = [
             (false, false, false, false, false, .off),
             (true, false, false, true, false, .needsAccess),
