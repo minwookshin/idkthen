@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="A little help with keyboard mix-ups and missing accents. Try idkthen in your browser, with up to four languages and no sign-in.">
+  <meta name="theme-color" content="#ffffff">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>idkthen | Your words, your languages</title>
+  <link rel="icon" href="./favicon.png">
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="canonical" href="https://pairtype-preview.yeyen17.chatgpt.site/">
+</head>
+<body class="landing">
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header wrap">
+    <a class="brand" href="./" aria-label="idkthen home"><img src="./logo.png" alt="" width="36" height="36">idkthen</a>
+    <nav aria-label="Main navigation"><a href="./help.html">Help</a><a class="nav-link" href="./download.html">Mac preview <span aria-hidden="true">↗</span></a></nav>
+  </header>
+  <main id="main" class="home wrap">
+    <section class="intro-block">
+      <h1>A few languages.<br><span>One train of thought.</span></h1>
+      <p>A little help with keyboard mix-ups and missing accents.</p>
+      <a class="watch-link" href="./demo.html"><span aria-hidden="true">▶</span> Watch a short demo</a>
+    </section>
+    <section id="try" class="typing-demo" aria-label="Interactive typing preview">
+      <div class="editor-heading">
+        <label for="typing-area">Try a sentence</label>
+        <button id="clear" type="button" class="quiet-button">Clear</button>
+      </div>
+      <textarea id="typing-area" aria-label="Try multilingual typing" maxlength="4000" spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off" aria-describedby="demo-limit demo-status" placeholder="Your words go here.">See you manana</textarea>
+      <div class="demo-feedback">
+        <p id="demo-status" role="status" aria-live="polite" aria-atomic="true">Type here. Finish a word with Space.</p>
+        <div class="demo-actions">
+          <button id="undo" type="button" class="quiet-button" hidden disabled>Undo correction</button>
+          <button id="try-example" type="button" class="try-button" aria-label="Try the example correction"><span aria-hidden="true">␣</span> Press Space</button>
+        </div>
+      </div>
+      <div id="suggestions" class="suggestions" aria-label="Possible corrections"></div>
+      <div class="demo-toolbar">
+        <button id="open-settings" class="language-trigger" type="button" aria-haspopup="dialog" aria-controls="typing-settings" aria-label="Choose languages and correction mode"><span id="active-languages">EN + ES + KO</span><span aria-hidden="true">⌄</span></button>
+        <span id="mode-label" class="mode-label">Automatic</span>
+      </div>
+    </section>
+    <div class="example-row"><span>Or try</span><div id="examples"></div></div>
+    <p class="demo-limit" id="demo-limit">Browser preview. No sign-in. Your text stays in this tab. <a href="./help.html#web-preview">How it works</a></p>
+    <span id="how-it-works" hidden></span>
+    <noscript><p class="notice">Enable JavaScript to try corrections. The guides work without it.</p></noscript>
+  </main>
+  <footer class="site-footer wrap"><nav aria-label="Footer"><a href="https://github.com/minwookshin/idkthen">GitHub</a><a href="./privacy.html">Privacy</a><a href="./release-notes.html">Release notes</a><a href="mailto:im.minwookshin@gmail.com?subject=idkthen%20support">Contact</a></nav></footer>
+  <dialog id="typing-settings" aria-labelledby="settings-title" aria-describedby="settings-description">
+    <div class="dialog-heading"><h2 id="settings-title">Your languages</h2><button id="close-settings" type="button" class="icon-button" aria-label="Close language settings" autofocus>×</button></div>
+    <p id="settings-description">English stays on. Choose up to three more.</p>
+    <div class="language-grid"><span class="language fixed-language">English <span aria-hidden="true">✓</span></span><div id="language-options"></div></div>
+    <p id="language-count">3 of 4 languages</p>
+    <p id="uk-note" hidden>Ukrainian examples need your confirmation.</p>
+    <fieldset class="mode-settings"><legend>Correction mode</legend><label><input type="radio" name="mode" value="automatic" checked><span>Automatic</span><small>Apply clear corrections</small></label><label><input type="radio" name="mode" value="suggest"><span>Suggest</span><small>Choose every correction</small></label></fieldset>
+  </dialog>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>

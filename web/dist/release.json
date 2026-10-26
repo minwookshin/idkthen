@@ -1,0 +1,11 @@
+{
+  "version": "0.18.0",
+  "channel": "development-preview",
+  "available": false,
+  "downloadURL": null,
+  "sha256": null,
+  "minimumMacOS": "14.0",
+  "architecture": "Apple silicon",
+  "notarized": false,
+  "notesURL": "./release-notes.html"
+}

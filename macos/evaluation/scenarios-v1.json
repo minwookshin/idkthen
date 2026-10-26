@@ -1,0 +1,1260 @@
+[
+  {
+    "id": "keep-english-001",
+    "category": "keep-english",
+    "languages": [
+      "spanish",
+      "french",
+      "korean"
+    ],
+    "input": "Please resume the video when you are ready. ",
+    "expected": "Please resume the video when you are ready. "
+  },
+  {
+    "id": "keep-english-002",
+    "category": "keep-english",
+    "languages": [
+      "spanish",
+      "french"
+    ],
+    "input": "The menu is ready for the cafe opening. ",
+    "expected": "The menu is ready for the cafe opening. "
+  },
+  {
+    "id": "keep-english-003",
+    "category": "keep-english",
+    "languages": [
+      "german",
+      "portuguese",
+      "italian"
+    ],
+    "input": "Our meeting is on Monday at noon. ",
+    "expected": "Our meeting is on Monday at noon. "
+  },
+  {
+    "id": "keep-english-004",
+    "category": "keep-english",
+    "languages": [
+      "russian",
+      "korean",
+      "french"
+    ],
+    "input": "Can you review the latest branch before lunch? ",
+    "expected": "Can you review the latest branch before lunch? "
+  },
+  {
+    "id": "keep-english-005",
+    "category": "keep-english",
+    "languages": [
+      "spanish",
+      "french",
+      "korean"
+    ],
+    "input": "I sent the invoice to the support team. ",
+    "expected": "I sent the invoice to the support team. "
+  },
+  {
+    "id": "keep-english-006",
+    "category": "keep-english",
+    "languages": [
+      "spanish",
+      "french"
+    ],
+    "input": "The design uses a black background and white text. ",
+    "expected": "The design uses a black background and white text. "
+  },
+  {
+    "id": "keep-english-007",
+    "category": "keep-english",
+    "languages": [
+      "german",
+      "portuguese",
+      "italian"
+    ],
+    "input": "We will meet in San Jose after the conference. ",
+    "expected": "We will meet in San Jose after the conference. "
+  },
+  {
+    "id": "keep-english-008",
+    "category": "keep-english",
+    "languages": [
+      "russian",
+      "korean",
+      "french"
+    ],
+    "input": "My colleague Rene will bring the notes. ",
+    "expected": "My colleague Rene will bring the notes. "
+  },
+  {
+    "id": "keep-english-009",
+    "category": "keep-english",
+    "languages": [
+      "spanish",
+      "french",
+      "korean"
+    ],
+    "input": "This is a naive approach, but it works. ",
+    "expected": "This is a naive approach, but it works. "
+  },
+  {
+    "id": "keep-english-010",
+    "category": "keep-english",
+    "languages": [
+      "spanish",
+      "french"
+    ],
+    "input": "The hotel has a nice facade and a small patio. ",
+    "expected": "The hotel has a nice facade and a small patio. "
+  },
+  {
+    "id": "keep-english-011",
+    "category": "keep-english",
+    "languages": [
+      "german",
+      "portuguese",
+      "italian"
+    ],
+    "input": "Use role and status as separate fields. ",
+    "expected": "Use role and status as separate fields. "
+  },
+  {
+    "id": "keep-english-012",
+    "category": "keep-english",
+    "languages": [
+      "russian",
+      "korean",
+      "french"
+    ],
+    "input": "I would like to keep this file as it is. ",
+    "expected": "I would like to keep this file as it is. "
+  },
+  {
+    "id": "keep-english-013",
+    "category": "keep-english",
+    "languages": [
+      "spanish",
+      "french",
+      "korean"
+    ],
+    "input": "Sara and Andre are reviewing the menu. ",
+    "expected": "Sara and Andre are reviewing the menu. "
+  },
+  {
+    "id": "keep-english-014",
+    "category": "keep-english",
+    "languages": [
+      "spanish",
+      "french"
+    ],
+    "input": "The current release is still a preview. ",
+    "expected": "The current release is still a preview. "
+  },
+  {
+    "id": "keep-english-015",
+    "category": "keep-english",
+    "languages": [
+      "german",
+      "portuguese",
+      "italian"
+    ],
+    "input": "That was so cool lol. ",
+    "expected": "That was so cool lol. "
+  },
+  {
+    "id": "keep-english-016",
+    "category": "keep-english",
+    "languages": [
+      "russian",
+      "korean",
+      "french"
+    ],
+    "input": "brb grabbing coffee, see you soon. ",
+    "expected": "brb grabbing coffee, see you soon. "
+  },
+  {
+    "id": "keep-english-017",
+    "category": "keep-english",
+    "languages": [
+      "spanish",
+      "french",
+      "korean"
+    ],
+    "input": "Please keep the API response in JSON. ",
+    "expected": "Please keep the API response in JSON. "
+  },
+  {
+    "id": "keep-english-018",
+    "category": "keep-english",
+    "languages": [
+      "spanish",
+      "french"
+    ],
+    "input": "Run npm install and then git status. ",
+    "expected": "Run npm install and then git status. "
+  },
+  {
+    "id": "keep-english-019",
+    "category": "keep-english",
+    "languages": [
+      "german",
+      "portuguese",
+      "italian"
+    ],
+    "input": "The endpoint is https://example.com/reunion?lang=fr. ",
+    "expected": "The endpoint is https://example.com/reunion?lang=fr. "
+  },
+  {
+    "id": "keep-english-020",
+    "category": "keep-english",
+    "languages": [
+      "russian",
+      "korean",
+      "french"
+    ],
+    "input": "Send it to manana@example.com when ready. ",
+    "expected": "Send it to manana@example.com when ready. "
+  },
+  {
+    "id": "keep-english-021",
+    "category": "keep-english",
+    "languages": [
+      "spanish",
+      "french",
+      "korean"
+    ],
+    "input": "Use @cafe and #resume in the example. ",
+    "expected": "Use @cafe and #resume in the example. "
+  },
+  {
+    "id": "keep-english-022",
+    "category": "keep-english",
+    "languages": [
+      "spanish",
+      "french"
+    ],
+    "input": "The variable is user_name and the file is perche.ts. ",
+    "expected": "The variable is user_name and the file is perche.ts. "
+  },
+  {
+    "id": "keep-english-023",
+    "category": "keep-english",
+    "languages": [
+      "german",
+      "portuguese",
+      "italian"
+    ],
+    "input": "Type `reunion` exactly as shown. ",
+    "expected": "Type `reunion` exactly as shown. "
+  },
+  {
+    "id": "keep-english-024",
+    "category": "keep-english",
+    "languages": [
+      "russian",
+      "korean",
+      "french"
+    ],
+    "input": "The price is USD 19.99 per month. ",
+    "expected": "The price is USD 19.99 per month. "
+  },
+  {
+    "id": "keep-english-025",
+    "category": "keep-english",
+    "languages": [
+      "spanish",
+      "french",
+      "korean"
+    ],
+    "input": "An emoji 👩🏽‍💻 should not move the cursor. ",
+    "expected": "An emoji 👩🏽‍💻 should not move the cursor. "
+  },
+  {
+    "id": "keep-english-026",
+    "category": "keep-english",
+    "languages": [
+      "spanish",
+      "french"
+    ],
+    "input": "Mañana means tomorrow in Spanish. ",
+    "expected": "Mañana means tomorrow in Spanish. "
+  },
+  {
+    "id": "keep-english-027",
+    "category": "keep-english",
+    "languages": [
+      "german",
+      "portuguese",
+      "italian"
+    ],
+    "input": "Already correct: français, mañana, coração. ",
+    "expected": "Already correct: français, mañana, coração. "
+  },
+  {
+    "id": "keep-english-028",
+    "category": "keep-english",
+    "languages": [
+      "russian",
+      "korean",
+      "french"
+    ],
+    "input": "She prefers strasse as her username. ",
+    "expected": "She prefers strasse as her username. "
+  },
+  {
+    "id": "keep-english-029",
+    "category": "keep-english",
+    "languages": [
+      "spanish",
+      "french",
+      "korean"
+    ],
+    "input": "Our app is called Vercel and our editor is Zed. ",
+    "expected": "Our app is called Vercel and our editor is Zed. "
+  },
+  {
+    "id": "keep-english-030",
+    "category": "keep-english",
+    "languages": [
+      "spanish",
+      "french"
+    ],
+    "input": "The branch is feature/manana and the key is cafe_id. ",
+    "expected": "The branch is feature/manana and the key is cafe_id. "
+  },
+  {
+    "id": "keep-english-031",
+    "category": "keep-english",
+    "languages": [
+      "german",
+      "portuguese",
+      "italian"
+    ],
+    "input": "We use Linear, Figma and Notion every day. ",
+    "expected": "We use Linear, Figma and Notion every day. "
+  },
+  {
+    "id": "keep-english-032",
+    "category": "keep-english",
+    "languages": [
+      "russian",
+      "korean",
+      "french"
+    ],
+    "input": "The meeting starts at 10:30, not 11:00. ",
+    "expected": "The meeting starts at 10:30, not 11:00. "
+  },
+  {
+    "id": "keep-english-033",
+    "category": "keep-english",
+    "languages": [
+      "spanish",
+      "french",
+      "korean"
+    ],
+    "input": "I got your message, thanks! ",
+    "expected": "I got your message, thanks! "
+  },
+  {
+    "id": "keep-english-034",
+    "category": "keep-english",
+    "languages": [
+      "spanish",
+      "french"
+    ],
+    "input": "A short typo is not always a different language. ",
+    "expected": "A short typo is not always a different language. "
+  },
+  {
+    "id": "keep-english-035",
+    "category": "keep-english",
+    "languages": [
+      "german",
+      "portuguese",
+      "italian"
+    ],
+    "input": "My nickname is ghbdtn and I want to keep it. ",
+    "expected": "My nickname is ghbdtn and I want to keep it. "
+  },
+  {
+    "id": "keep-english-036",
+    "category": "keep-english",
+    "languages": [
+      "russian",
+      "korean",
+      "french"
+    ],
+    "input": "The password example is never a real password. ",
+    "expected": "The password example is never a real password. "
+  },
+  {
+    "id": "keep-english-037",
+    "category": "keep-english",
+    "languages": [
+      "spanish",
+      "french",
+      "korean"
+    ],
+    "input": "Do not rename the folder CAFE. ",
+    "expected": "Do not rename the folder CAFE. "
+  },
+  {
+    "id": "keep-english-038",
+    "category": "keep-english",
+    "languages": [
+      "spanish",
+      "french"
+    ],
+    "input": "The query returns true or false. ",
+    "expected": "The query returns true or false. "
+  },
+  {
+    "id": "keep-english-039",
+    "category": "keep-english",
+    "languages": [
+      "german",
+      "portuguese",
+      "italian"
+    ],
+    "input": "This text is in English even when four languages are enabled. ",
+    "expected": "This text is in English even when four languages are enabled. "
+  },
+  {
+    "id": "keep-english-040",
+    "category": "keep-english",
+    "languages": [
+      "russian",
+      "korean",
+      "french"
+    ],
+    "input": "See the attached resume before the next call. ",
+    "expected": "See the attached resume before the next call. "
+  },
+  {
+    "id": "keep-spanish-001",
+    "category": "keep-spanish",
+    "languages": [
+      "spanish"
+    ],
+    "input": "Nos vemos mañana en la oficina. ",
+    "expected": "Nos vemos mañana en la oficina. "
+  },
+  {
+    "id": "keep-spanish-002",
+    "category": "keep-spanish",
+    "languages": [
+      "spanish"
+    ],
+    "input": "El año pasado fue muy bueno. ",
+    "expected": "El año pasado fue muy bueno. "
+  },
+  {
+    "id": "keep-spanish-003",
+    "category": "keep-spanish",
+    "languages": [
+      "spanish"
+    ],
+    "input": "Tu casa está cerca de la estación. ",
+    "expected": "Tu casa está cerca de la estación. "
+  },
+  {
+    "id": "keep-spanish-004",
+    "category": "keep-spanish",
+    "languages": [
+      "spanish"
+    ],
+    "input": "Si quieres, podemos hablar ahora. ",
+    "expected": "Si quieres, podemos hablar ahora. "
+  },
+  {
+    "id": "keep-spanish-005",
+    "category": "keep-spanish",
+    "languages": [
+      "spanish"
+    ],
+    "input": "Esta es una reunión importante. ",
+    "expected": "Esta es una reunión importante. "
+  },
+  {
+    "id": "keep-spanish-006",
+    "category": "keep-spanish",
+    "languages": [
+      "spanish"
+    ],
+    "input": "Me gusta el café sin azúcar. ",
+    "expected": "Me gusta el café sin azúcar. "
+  },
+  {
+    "id": "keep-french-001",
+    "category": "keep-french",
+    "languages": [
+      "french"
+    ],
+    "input": "Bonjour, comment allez-vous aujourd’hui ? ",
+    "expected": "Bonjour, comment allez-vous aujourd’hui ? "
+  },
+  {
+    "id": "keep-french-002",
+    "category": "keep-french",
+    "languages": [
+      "french"
+    ],
+    "input": "Je suis déjà arrivé à Montréal. ",
+    "expected": "Je suis déjà arrivé à Montréal. "
+  },
+  {
+    "id": "keep-french-003",
+    "category": "keep-french",
+    "languages": [
+      "french"
+    ],
+    "input": "Le café est près de la bibliothèque. ",
+    "expected": "Le café est près de la bibliothèque. "
+  },
+  {
+    "id": "keep-french-004",
+    "category": "keep-french",
+    "languages": [
+      "french"
+    ],
+    "input": "Nous avons une réunion demain. ",
+    "expected": "Nous avons une réunion demain. "
+  },
+  {
+    "id": "keep-french-005",
+    "category": "keep-french",
+    "languages": [
+      "french"
+    ],
+    "input": "Merci pour votre réponse. ",
+    "expected": "Merci pour votre réponse. "
+  },
+  {
+    "id": "keep-french-006",
+    "category": "keep-french",
+    "languages": [
+      "french"
+    ],
+    "input": "Il peut reprendre son travail maintenant. ",
+    "expected": "Il peut reprendre son travail maintenant. "
+  },
+  {
+    "id": "keep-german-001",
+    "category": "keep-german",
+    "languages": [
+      "german"
+    ],
+    "input": "Wir treffen uns morgen in Berlin. ",
+    "expected": "Wir treffen uns morgen in Berlin. "
+  },
+  {
+    "id": "keep-german-002",
+    "category": "keep-german",
+    "languages": [
+      "german"
+    ],
+    "input": "Das ist schon eine gute Idee. ",
+    "expected": "Das ist schon eine gute Idee. "
+  },
+  {
+    "id": "keep-german-003",
+    "category": "keep-german",
+    "languages": [
+      "german"
+    ],
+    "input": "Vielen Dank für deine Hilfe. ",
+    "expected": "Vielen Dank für deine Hilfe. "
+  },
+  {
+    "id": "keep-german-004",
+    "category": "keep-german",
+    "languages": [
+      "german"
+    ],
+    "input": "Ich wohne in der Straße nebenan. ",
+    "expected": "Ich wohne in der Straße nebenan. "
+  },
+  {
+    "id": "keep-german-005",
+    "category": "keep-german",
+    "languages": [
+      "german"
+    ],
+    "input": "Das Wetter ist heute schön. ",
+    "expected": "Das Wetter ist heute schön. "
+  },
+  {
+    "id": "keep-german-006",
+    "category": "keep-german",
+    "languages": [
+      "german"
+    ],
+    "input": "Wir können später darüber sprechen. ",
+    "expected": "Wir können später darüber sprechen. "
+  },
+  {
+    "id": "keep-portuguese-001",
+    "category": "keep-portuguese",
+    "languages": [
+      "portuguese"
+    ],
+    "input": "A reunião começa amanhã. ",
+    "expected": "A reunião começa amanhã. "
+  },
+  {
+    "id": "keep-portuguese-002",
+    "category": "keep-portuguese",
+    "languages": [
+      "portuguese"
+    ],
+    "input": "Você pode enviar o arquivo agora. ",
+    "expected": "Você pode enviar o arquivo agora. "
+  },
+  {
+    "id": "keep-portuguese-003",
+    "category": "keep-portuguese",
+    "languages": [
+      "portuguese"
+    ],
+    "input": "Obrigado pela informação. ",
+    "expected": "Obrigado pela informação. "
+  },
+  {
+    "id": "keep-portuguese-004",
+    "category": "keep-portuguese",
+    "languages": [
+      "portuguese"
+    ],
+    "input": "O café está muito bom. ",
+    "expected": "O café está muito bom. "
+  },
+  {
+    "id": "keep-portuguese-005",
+    "category": "keep-portuguese",
+    "languages": [
+      "portuguese"
+    ],
+    "input": "Eu vou por aqui e volto depois. ",
+    "expected": "Eu vou por aqui e volto depois. "
+  },
+  {
+    "id": "keep-portuguese-006",
+    "category": "keep-portuguese",
+    "languages": [
+      "portuguese"
+    ],
+    "input": "Meu coração está tranquilo. ",
+    "expected": "Meu coração está tranquilo. "
+  },
+  {
+    "id": "keep-italian-001",
+    "category": "keep-italian",
+    "languages": [
+      "italian"
+    ],
+    "input": "Ci vediamo lunedì mattina. ",
+    "expected": "Ci vediamo lunedì mattina. "
+  },
+  {
+    "id": "keep-italian-002",
+    "category": "keep-italian",
+    "languages": [
+      "italian"
+    ],
+    "input": "Perché non vieni con noi? ",
+    "expected": "Perché non vieni con noi? "
+  },
+  {
+    "id": "keep-italian-003",
+    "category": "keep-italian",
+    "languages": [
+      "italian"
+    ],
+    "input": "La città è molto bella. ",
+    "expected": "La città è molto bella. "
+  },
+  {
+    "id": "keep-italian-004",
+    "category": "keep-italian",
+    "languages": [
+      "italian"
+    ],
+    "input": "Sara arriva domani. ",
+    "expected": "Sara arriva domani. "
+  },
+  {
+    "id": "keep-italian-005",
+    "category": "keep-italian",
+    "languages": [
+      "italian"
+    ],
+    "input": "Si può fare senza problemi. ",
+    "expected": "Si può fare senza problemi. "
+  },
+  {
+    "id": "keep-italian-006",
+    "category": "keep-italian",
+    "languages": [
+      "italian"
+    ],
+    "input": "Grazie per la risposta. ",
+    "expected": "Grazie per la risposta. "
+  },
+  {
+    "id": "keep-russian-001",
+    "category": "keep-russian",
+    "languages": [
+      "russian"
+    ],
+    "input": "Привет, как дела? ",
+    "expected": "Привет, как дела? "
+  },
+  {
+    "id": "keep-russian-002",
+    "category": "keep-russian",
+    "languages": [
+      "russian"
+    ],
+    "input": "Спасибо за помощь. ",
+    "expected": "Спасибо за помощь. "
+  },
+  {
+    "id": "keep-russian-003",
+    "category": "keep-russian",
+    "languages": [
+      "russian"
+    ],
+    "input": "Мы встретимся завтра утром. ",
+    "expected": "Мы встретимся завтра утром. "
+  },
+  {
+    "id": "keep-russian-004",
+    "category": "keep-russian",
+    "languages": [
+      "russian"
+    ],
+    "input": "Это хороший пример. ",
+    "expected": "Это хороший пример. "
+  },
+  {
+    "id": "keep-russian-005",
+    "category": "keep-russian",
+    "languages": [
+      "russian"
+    ],
+    "input": "Можно отправить файл позже. ",
+    "expected": "Можно отправить файл позже. "
+  },
+  {
+    "id": "keep-russian-006",
+    "category": "keep-russian",
+    "languages": [
+      "russian"
+    ],
+    "input": "Я использую Chrome каждый день. ",
+    "expected": "Я использую Chrome каждый день. "
+  },
+  {
+    "id": "keep-ukrainian-001",
+    "category": "keep-ukrainian",
+    "languages": [
+      "ukrainian"
+    ],
+    "input": "Привіт, як справи? ",
+    "expected": "Привіт, як справи? "
+  },
+  {
+    "id": "keep-ukrainian-002",
+    "category": "keep-ukrainian",
+    "languages": [
+      "ukrainian"
+    ],
+    "input": "Дякую за допомогу. ",
+    "expected": "Дякую за допомогу. "
+  },
+  {
+    "id": "keep-ukrainian-003",
+    "category": "keep-ukrainian",
+    "languages": [
+      "ukrainian"
+    ],
+    "input": "Ми зустрінемося завтра. ",
+    "expected": "Ми зустрінемося завтра. "
+  },
+  {
+    "id": "keep-ukrainian-004",
+    "category": "keep-ukrainian",
+    "languages": [
+      "ukrainian"
+    ],
+    "input": "Це хороший приклад. ",
+    "expected": "Це хороший приклад. "
+  },
+  {
+    "id": "keep-ukrainian-005",
+    "category": "keep-ukrainian",
+    "languages": [
+      "ukrainian"
+    ],
+    "input": "Можна надіслати файл пізніше. ",
+    "expected": "Можна надіслати файл пізніше. "
+  },
+  {
+    "id": "keep-ukrainian-006",
+    "category": "keep-ukrainian",
+    "languages": [
+      "ukrainian"
+    ],
+    "input": "Я використовую Chrome щодня. ",
+    "expected": "Я використовую Chrome щодня. "
+  },
+  {
+    "id": "keep-korean-001",
+    "category": "keep-korean",
+    "languages": [
+      "korean"
+    ],
+    "input": "오늘은 날씨가 좋네요. ",
+    "expected": "오늘은 날씨가 좋네요. "
+  },
+  {
+    "id": "keep-korean-002",
+    "category": "keep-korean",
+    "languages": [
+      "korean"
+    ],
+    "input": "Figma에서 확인하고 Slack으로 보내줘. ",
+    "expected": "Figma에서 확인하고 Slack으로 보내줘. "
+  },
+  {
+    "id": "keep-korean-003",
+    "category": "keep-korean",
+    "languages": [
+      "korean"
+    ],
+    "input": "이번 주에 프로젝트를 마무리하자. ",
+    "expected": "이번 주에 프로젝트를 마무리하자. "
+  },
+  {
+    "id": "keep-korean-004",
+    "category": "keep-korean",
+    "languages": [
+      "korean"
+    ],
+    "input": "다음 회의는 내일 오후 두 시야. ",
+    "expected": "다음 회의는 내일 오후 두 시야. "
+  },
+  {
+    "id": "keep-korean-005",
+    "category": "keep-korean",
+    "languages": [
+      "korean"
+    ],
+    "input": "지금 gogo 해도 될까? ",
+    "expected": "지금 gogo 해도 될까? "
+  },
+  {
+    "id": "keep-korean-006",
+    "category": "keep-korean",
+    "languages": [
+      "korean"
+    ],
+    "input": "오늘 momo 만나서 같이 밥 먹자. ",
+    "expected": "오늘 momo 만나서 같이 밥 먹자. "
+  },
+  {
+    "id": "keep-korean-007",
+    "category": "keep-korean",
+    "languages": [
+      "korean"
+    ],
+    "input": "나는 lulu 계정으로 로그인했어. ",
+    "expected": "나는 lulu 계정으로 로그인했어. "
+  },
+  {
+    "id": "keep-korean-008",
+    "category": "keep-korean",
+    "languages": [
+      "korean"
+    ],
+    "input": "링크는 https://example.com/dkssud 에 있어. ",
+    "expected": "링크는 https://example.com/dkssud 에 있어. "
+  },
+  {
+    "id": "recover-spanish-001",
+    "category": "recover-spanish",
+    "languages": [
+      "spanish"
+    ],
+    "input": "Nos vemos manana. ",
+    "expected": "Nos vemos mañana. "
+  },
+  {
+    "id": "recover-spanish-002",
+    "category": "recover-spanish",
+    "languages": [
+      "spanish"
+    ],
+    "input": "La informacion es importante. ",
+    "expected": "La información es importante. "
+  },
+  {
+    "id": "recover-spanish-003",
+    "category": "recover-spanish",
+    "languages": [
+      "spanish"
+    ],
+    "input": "El arbol es grande. ",
+    "expected": "El árbol es grande. "
+  },
+  {
+    "id": "recover-spanish-004",
+    "category": "recover-spanish",
+    "languages": [
+      "spanish"
+    ],
+    "input": "Necesito una solucion. ",
+    "expected": "Necesito una solución. "
+  },
+  {
+    "id": "recover-french-001",
+    "category": "recover-french",
+    "languages": [
+      "french"
+    ],
+    "input": "Je parle francais. ",
+    "expected": "Je parle français. "
+  },
+  {
+    "id": "recover-french-002",
+    "category": "recover-french",
+    "languages": [
+      "french"
+    ],
+    "input": "Je suis deja arrive. ",
+    "expected": "Je suis déjà arrivé. "
+  },
+  {
+    "id": "recover-french-003",
+    "category": "recover-french",
+    "languages": [
+      "french"
+    ],
+    "input": "Il habite pres de l’ecole. ",
+    "expected": "Il habite près de l’école. "
+  },
+  {
+    "id": "recover-french-004",
+    "category": "recover-french",
+    "languages": [
+      "french"
+    ],
+    "input": "C’est une bonne idee. ",
+    "expected": "C’est une bonne idée. "
+  },
+  {
+    "id": "recover-german-001",
+    "category": "recover-german",
+    "languages": [
+      "german"
+    ],
+    "input": "Die strasse ist lang. ",
+    "expected": "Die straße ist lang. "
+  },
+  {
+    "id": "recover-german-002",
+    "category": "recover-german",
+    "languages": [
+      "german"
+    ],
+    "input": "Ich bin muede. ",
+    "expected": "Ich bin muede. "
+  },
+  {
+    "id": "recover-german-003",
+    "category": "recover-german",
+    "languages": [
+      "german"
+    ],
+    "input": "Das ist schoen. ",
+    "expected": "Das ist schoen. "
+  },
+  {
+    "id": "recover-portuguese-001",
+    "category": "recover-portuguese",
+    "languages": [
+      "portuguese"
+    ],
+    "input": "A reuniao e amanha. ",
+    "expected": "A reunião e amanhã. "
+  },
+  {
+    "id": "recover-portuguese-002",
+    "category": "recover-portuguese",
+    "languages": [
+      "portuguese"
+    ],
+    "input": "Meu coracao esta feliz. ",
+    "expected": "Meu coração esta feliz. "
+  },
+  {
+    "id": "recover-portuguese-003",
+    "category": "recover-portuguese",
+    "languages": [
+      "portuguese"
+    ],
+    "input": "Preciso de informacao. ",
+    "expected": "Preciso de informação. "
+  },
+  {
+    "id": "recover-italian-001",
+    "category": "recover-italian",
+    "languages": [
+      "italian"
+    ],
+    "input": "Ci vediamo lunedi. ",
+    "expected": "Ci vediamo lunedì. "
+  },
+  {
+    "id": "recover-italian-002",
+    "category": "recover-italian",
+    "languages": [
+      "italian"
+    ],
+    "input": "Non capisco perche. ",
+    "expected": "Non capisco perché. "
+  },
+  {
+    "id": "recover-italian-003",
+    "category": "recover-italian",
+    "languages": [
+      "italian"
+    ],
+    "input": "La citta e bella. ",
+    "expected": "La città e bella. "
+  },
+  {
+    "id": "recover-korean-001",
+    "category": "recover-korean",
+    "languages": [
+      "korean"
+    ],
+    "input": "dkssudgktpdy ",
+    "expected": "안녕하세요 "
+  },
+  {
+    "id": "recover-korean-002",
+    "category": "recover-korean",
+    "languages": [
+      "korean"
+    ],
+    "input": "rkatkgkqslek ",
+    "expected": "감사합니다 "
+  },
+  {
+    "id": "recover-korean-003",
+    "category": "recover-korean",
+    "languages": [
+      "korean"
+    ],
+    "input": "오늘 chromedptj 확인해줘. ",
+    "expected": "오늘 chrome에서 확인해줘. "
+  },
+  {
+    "id": "recover-korean-004",
+    "category": "recover-korean",
+    "languages": [
+      "korean"
+    ],
+    "input": "Notiondptj 문서를 열어줘. ",
+    "expected": "Notion에서 문서를 열어줘. "
+  },
+  {
+    "id": "recover-korean-005",
+    "category": "recover-korean",
+    "languages": [
+      "korean"
+    ],
+    "input": "오늘 dkssud gkdl ",
+    "expected": "오늘 안녕 하이 "
+  },
+  {
+    "id": "recover-russian-001",
+    "category": "recover-russian",
+    "languages": [
+      "russian"
+    ],
+    "input": "ghbdtn ",
+    "expected": "привет "
+  },
+  {
+    "id": "recover-russian-002",
+    "category": "recover-russian",
+    "languages": [
+      "russian"
+    ],
+    "input": "cgfcb,j ",
+    "expected": "спасибо "
+  },
+  {
+    "id": "recover-russian-003",
+    "category": "recover-russian",
+    "languages": [
+      "russian"
+    ],
+    "input": "lj,hsq ltym ",
+    "expected": "добрый день "
+  },
+  {
+    "id": "choice-or-keep-001",
+    "category": "choice-or-keep",
+    "languages": [
+      "french"
+    ],
+    "input": "Please resume the meeting. ",
+    "expected": "Please resume the meeting. "
+  },
+  {
+    "id": "choice-or-keep-002",
+    "category": "choice-or-keep",
+    "languages": [
+      "french"
+    ],
+    "input": "I will order from the menu. ",
+    "expected": "I will order from the menu. "
+  },
+  {
+    "id": "choice-or-keep-003",
+    "category": "choice-or-keep",
+    "languages": [
+      "spanish"
+    ],
+    "input": "si tu papa ",
+    "expected": "si tu papa "
+  },
+  {
+    "id": "choice-or-keep-004",
+    "category": "choice-or-keep",
+    "languages": [
+      "german"
+    ],
+    "input": "Das ist schon. ",
+    "expected": "Das ist schon. "
+  },
+  {
+    "id": "choice-or-keep-005",
+    "category": "choice-or-keep",
+    "languages": [
+      "portuguese"
+    ],
+    "input": "Eu vou por aqui. ",
+    "expected": "Eu vou por aqui. "
+  },
+  {
+    "id": "choice-or-keep-006",
+    "category": "choice-or-keep",
+    "languages": [
+      "italian"
+    ],
+    "input": "Sara sara qui. ",
+    "expected": "Sara sara qui. "
+  },
+  {
+    "id": "choice-or-keep-007",
+    "category": "choice-or-keep",
+    "languages": [
+      "ukrainian"
+    ],
+    "input": "ghbdsn ",
+    "expected": "ghbdsn "
+  },
+  {
+    "id": "multilanguage-choice-001",
+    "category": "multilanguage-choice",
+    "languages": [
+      "spanish",
+      "french",
+      "italian"
+    ],
+    "input": "reunion ",
+    "expected": "reunion "
+  },
+  {
+    "id": "multilanguage-choice-002",
+    "category": "multilanguage-choice",
+    "languages": [
+      "spanish",
+      "french",
+      "italian"
+    ],
+    "input": "resume ",
+    "expected": "resume "
+  },
+  {
+    "id": "multilanguage-choice-003",
+    "category": "multilanguage-choice",
+    "languages": [
+      "spanish",
+      "french",
+      "italian"
+    ],
+    "input": "cafe ",
+    "expected": "cafe "
+  },
+  {
+    "id": "multilanguage-choice-004",
+    "category": "multilanguage-choice",
+    "languages": [
+      "spanish",
+      "french",
+      "italian"
+    ],
+    "input": "menu ",
+    "expected": "menu "
+  },
+  {
+    "id": "multilanguage-choice-005",
+    "category": "multilanguage-choice",
+    "languages": [
+      "spanish",
+      "french",
+      "italian"
+    ],
+    "input": "solo ",
+    "expected": "solo "
+  },
+  {
+    "id": "multilanguage-choice-006",
+    "category": "multilanguage-choice",
+    "languages": [
+      "spanish",
+      "french",
+      "italian"
+    ],
+    "input": "sale ",
+    "expected": "sale "
+  },
+  {
+    "id": "custom-keep-001",
+    "category": "custom-keep",
+    "languages": [
+      "korean"
+    ],
+    "input": "오늘 Lulu를 만나서 lulu 이야기를 했다. ",
+    "expected": "오늘 Lulu를 만나서 lulu 이야기를 했다. ",
+    "keepWords": [
+      "lulu"
+    ]
+  },
+  {
+    "id": "custom-keep-002",
+    "category": "custom-keep",
+    "languages": [
+      "spanish"
+    ],
+    "input": "We call the product manana. ",
+    "expected": "We call the product manana. ",
+    "keepWords": [
+      "manana"
+    ]
+  }
+]

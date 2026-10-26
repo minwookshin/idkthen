@@ -1,0 +1,24 @@
+# Build products and local evidence
+.DS_Store
+.build/
+build/
+.swiftpm/
+node_modules/
+__pycache__/
+*.pyc
+*.app/
+*.dmg
+*.zip
+*.tar.gz
+verification/
+release-output/
+validation-evidence.json
+# Hosting metadata and credentials stay outside the public source tree
+.openai/
+.env
+.env.*
+!.env.example
+*.p12
+*.p8
+*.key
+*.mobileprovision

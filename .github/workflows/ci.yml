@@ -1,0 +1,38 @@
+name: Checks
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  web-and-release-tools:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - run: npm test --prefix web
+      - name: Generated pages match source
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm run build --prefix web
+          git diff --exit-code -- web/dist
+      - run: python3 macos/scripts/test-release.py
+      - run: python3 macos/scripts/test-candidate.py
+  macos:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Toolchain
+        run: |
+          xcodebuild -version
+          swift --version
+      - run: swift test --package-path macos -c release
+      - run: bash macos/scripts/build-app.sh
+      - name: Development bundle integrity
+        run: codesign --verify --strict build/idkthen.app

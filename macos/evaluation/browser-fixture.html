@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; form-action 'none'; base-uri 'none'">
+<title>idkthen Native Integration Fixture</title>
+<style>
+body{font:17px system-ui;max-width:760px;margin:32px auto;padding:0 24px;color:#161616;background:white}h1{font-size:26px}p{color:#555;line-height:1.5}label{display:block;margin:20px 0 8px;font-weight:600}textarea,[contenteditable],input,pre{box-sizing:border-box;width:100%;font:18px system-ui;border:1px solid #aaa;border-radius:8px;padding:12px;background:white;color:#111}textarea,[contenteditable]{min-height:125px}textarea{resize:vertical}button{font:inherit;padding:8px 16px;margin:12px 8px 0 0}pre{font:13px ui-monospace;white-space:pre-wrap}small{color:#666}
+</style>
+<h1>idkthen native integration</h1>
+<p>Local test fields. This page has no correction engine, storage, network calls or keyboard shortcuts. Any automatic replacement must come from the native app or browser. Use invented test text only.</p>
+<label for="document">Multiline document</label>
+<textarea id="document" aria-label="Multiline document" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
+<label for="rich">Rich text document</label>
+<div id="rich" role="textbox" aria-label="Rich text document" aria-multiline="true" contenteditable="true" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></div>
+<label for="single">Single-line field — must stay unchanged</label>
+<input id="single" aria-label="Single-line test" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+<label for="secret">Synthetic password — must stay unchanged</label>
+<input id="secret" type="password" aria-label="Synthetic password test" autocomplete="off" spellcheck="false">
+<label for="readonly">Read-only field</label>
+<textarea id="readonly" aria-label="Read-only test" readonly spellcheck="false">chromedptj dkssud gkrpTwld</textarea>
+<button id="seed" type="button">Load formatting test</button>
+<button id="inspect" type="button">Inspect fixture values</button><button id="clear" type="button">Clear fixture</button>
+<p><small>The password field is for the public synthetic string “chromedptj” only. Inspection reports whether that string is unchanged, without displaying its value.</small></p>
+<pre id="result" aria-label="Inspection result">No inspection yet.</pre>
+<script>
+const field=id=>document.getElementById(id);
+const metrics={document:[],rich:[]};
+for(const id of ['document','rich'])field(id).addEventListener('input',e=>{metrics[id].push({ms:Math.round(performance.now()*10)/10,type:e.inputType,trusted:e.isTrusted,length:(id==='rich'?field(id).textContent:field(id).value).length});metrics[id]=metrics[id].slice(-120)});
+field('seed').addEventListener('click',()=>{field('rich').innerHTML='<strong>Before 🚀</strong> <span>chromedptj</span> <em>after 👋</em>';const range=document.createRange();range.selectNodeContents(field('rich').querySelector('span'));field('rich').focus();getSelection().removeAllRanges();getSelection().addRange(range)});
+
+field('inspect').addEventListener('click',()=>{field('result').textContent=JSON.stringify({document:field('document').value,rich:field('rich').textContent,richHTML:field('rich').innerHTML,inputEvents:metrics,single:field('single').value,passwordLength:field('secret').value.length,passwordMatchesFixture:field('secret').value==='chromedptj ',readonly:field('readonly').value},null,2)});
+field('clear').addEventListener('click',()=>{for(const id of ['document','single','secret'])field(id).value='';field('rich').textContent='';field('result').textContent='No inspection yet.';field('document').focus()});
+</script>
+</html>

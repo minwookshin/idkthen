@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Watch idkthen recover missing accents and a mixed Korean ending, then try your own words. A guided browser preview, no sign-in.">
+  <meta name="theme-color" content="#ffffff">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>See idkthen in action</title>
+  <link rel="canonical" href="https://pairtype-preview.yeyen17.chatgpt.site/demo.html">
+  <link rel="icon" href="./favicon.png"><link rel="stylesheet" href="./styles.css"><link rel="stylesheet" href="./walkthrough.css">
+</head>
+<body class="landing walkthrough">
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header wrap"><a class="brand" href="./" aria-label="idkthen home"><img src="./logo.png" alt="" width="36" height="36">idkthen</a><nav aria-label="Main navigation"><a href="./?languages=es,fr,ko#try">Try it yourself</a><a href="./download.html">Mac preview <span aria-hidden="true">↗</span></a></nav></header>
+  <main id="main" class="demo-main wrap">
+    <div class="walkthrough-heading"><p class="eyebrow">A little help, as you type</p><h1>Keep the conversation going.</h1><p>Missing accents. Mixed words. Still your voice.</p></div>
+    <section class="demo-stage" aria-label="Guided typing demonstration">
+      <div class="stage-top"><span id="scene-label">English + Spanish</span><span class="profile-label" aria-label="Enabled languages: English, Spanish, French and Korean">EN · ES · FR · KO</span></div>
+      <div class="stage-writing" aria-label="Demonstration text"><span id="scene-text">See you manana</span><span class="demo-caret" aria-hidden="true"></span></div>
+      <div class="stage-bottom"><p id="scene-status" role="status" aria-live="polite" aria-atomic="true">Finish the word with Space.</p><span id="boundary-key" aria-hidden="true">␣ Space</span></div>
+      <div id="scene-choices" class="scene-choices" aria-label="Choose a reading"></div>
+      <button id="scene-undo" class="quiet-button scene-undo" hidden>Undo correction</button>
+    </section>
+    <div class="walkthrough-controls"><div class="playback-controls"><button id="play-demo" class="play-demo" type="button"><span id="play-symbol" aria-hidden="true">▶</span><span id="play-label">Play walkthrough</span></button><button id="show-result" class="quiet-button" type="button">Show result</button></div><span id="scene-count" aria-label="Scene 1 of 4">01 / 04</span></div>
+    <nav class="scene-nav" aria-label="Demo scenes">
+      <button type="button" data-scene="0" aria-pressed="true"><span>01</span>Español</button><button type="button" data-scene="1" aria-pressed="false"><span>02</span>Français</button><button type="button" data-scene="2" aria-pressed="false"><span>03</span>한국어</button><button type="button" data-scene="3" aria-pressed="false"><span>04</span>Your call</button>
+    </nav>
+    <div class="scene-description"><h2 id="scene-title">See you mañana.</h2><p id="scene-description">A missing accent. The English stays just as you wrote it.</p></div>
+    <div class="demo-next"><a class="primary-button" href="./?languages=es,fr,ko#try">Try your own words <span aria-hidden="true">↗</span></a><p>Browser preview · No sign-in</p></div>
+    <details class="demo-disclosure"><summary>About this demo</summary><p>This is scripted playback of curated examples using the same rules as this website’s typing preview. It is not a recording or a speed test of the Mac app. The browser has a small, authored vocabulary; the Mac app uses separate native logic.</p><p>All four displayed languages are enabled throughout. Ambiguous readings wait for your choice. Undo correction restores the latest example. In the editable browser preview, use its Undo correction button; standard browser undo does not reliably restore automatic corrections yet.</p><p>The Mac app is in development. Its public installer is not available yet. <a href="./download.html">See the current Mac status</a>.</p></details>
+    <noscript><p class="notice">Enable JavaScript to play the walkthrough. <a href="./help.html#web-preview">Read the typing examples</a>.</p></noscript>
+  </main>
+  <footer class="site-footer wrap"><nav aria-label="Footer"><a href="./privacy.html">Privacy</a><a href="./help.html">Help</a><a href="mailto:im.minwookshin@gmail.com?subject=idkthen%20support">Contact</a></nav></footer>
+  <script type="module" src="./walkthrough.js"></script>
+</body>
+</html>

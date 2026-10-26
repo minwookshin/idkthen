@@ -1,0 +1,64 @@
+{
+  "executable_sha256": "REPLACE_AFTER_DEVELOPER_ID_SIGNING",
+  "support_url": "https://pairtype-preview.yeyen17.chatgpt.site/help.html",
+  "privacy_url": "https://pairtype-preview.yeyen17.chatgpt.site/privacy.html",
+  "public_support_confirmed": true,
+  "checks": {
+    "automated_checks": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "fresh_install": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "textedit_typing_undo": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "safari_typing_undo": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "chrome_typing_undo": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "secure_field_skip": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "ime_and_paste": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "login_items": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "permission_recovery": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "voiceover": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "minimum_macos_runtime": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "update_and_remove": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "typing_stability": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "undo_shortcut": {
+      "status": "pending",
+      "evidence": ""
+    }
+  }
+}
