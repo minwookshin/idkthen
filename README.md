@@ -1,4 +1,6 @@
-# idkthen
+# Keys
+
+Previously called idkthen. [See the project](https://www.minwookshin.com/work/idkthen).
 
 A small Mac menu bar app for typing in more than one language.
 Recover keyboard mix-ups and missing accents without rewriting your message.
